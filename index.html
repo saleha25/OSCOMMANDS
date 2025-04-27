@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Linux Tutorial for Beginners</title>
+    <style>
+        /* General Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: all 0.2s ease-in-out; /* Smooth transitions */
+        }
+
+        body {
+            background: #f4f8ff; /* Light, soft background */
+            color: #333; /* Darker text for readability */
+            line-height: 1.7;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.8rem; /* Larger, more prominent heading */
+            color: #2c3e50;
+            letter-spacing: -1px; /* Tighten letter spacing */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+        }
+
+        /* Section Styles */
+        .section {
+            background: #fff;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 12px; /* More rounded corners */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.07); /* Deeper shadow */
+            border-left: 8px solid #4a89dc; /* More vibrant accent color */
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Even deeper shadow on hover */
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: #3b5998; /* Stronger heading color */
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eee; /* Underline effect */
+            padding-bottom: 8px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        code {
+            background: #f0f0f5; /* Lighter code background */
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #c0392b; /* Stronger code color */
+            font-size: 0.9rem;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+                margin-bottom: 30px;
+            }
+
+            .section {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Additional enhancements */
+        a {
+            color: #4a89dc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
+
+        ol {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🚀 Linux Tutorial: Learn the Basics</h1>
+
+    <div class="section">
+        <h2>📁 Navigating Directories</h2>
+        <p>
+            <code>cd</code>: Change directory. Use <code>cd ..</code> to move up one level. For example:
+        </p>
+        <ul>
+            <li><code>cd /home/user/Documents</code>: Go to the Documents directory.</li>
+            <li><code>cd ~</code>: Go to your home directory.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>📍 Print Current Directory</h2>
+        <p><code>pwd</code>: Displays the full path of your current working directory. This is useful when you're lost in the terminal!</p>
+    </div>
+
+    <div class="section">
+        <h2>📄 Listing Files</h2>
+        <p>
+            <code>ls</code>: Lists files. Some useful options:
+        </p>
+        <ul>
+            <li><code>ls -l</code>: Long format (permissions, size, date).</li>
+            <li><code>ls -a</code>: Show hidden files (files starting with a dot).</li>
+            <li><code>ls -h</code>: Human-readable sizes.</li>
+            <li><code>ls -t</code>: Sort by modification time.</li>
+        </ul>
+        <p>Combine options, e.g., <code>ls -laht</code>.</p>
+    </div>
+
+    <div class="section">
+        <h2>📝 Creating & Editing Files</h2>
+        <p>
+            <code>touch file.txt</code>: Creates an empty file. For editing, you can use:
+        </p>
+        <ul>
+            <li><code>nano</code>: A simple, beginner-friendly editor. <code>nano file.txt</code></li>
+            <li><code>vim</code>: A powerful, but more complex editor. <code>vim file.txt</code></li>
+            <li><code>gedit</code>: A graphical editor (if you have a GUI). <code>gedit file.txt</code></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>📂 Creating Directories</h2>
+        <p>
+            <code>mkdir folder</code>: Makes a new directory (folder).
+        </p>
+        <ul>
+            <li><code>mkdir -p parent/child</code>: Creates nested directories. If "parent" doesn't exist, it will be created.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🗑️ Deleting Files & Folders</h2>
+        <p>
+            <b>Be careful with these! Deleted files are usually gone for good.</b>
+        </p>
+        <ul>
+            <li><code>rm file</code>: Deletes a file.</li>
+            <li><code>rm -r folder</code>: Deletes a folder and its contents (recursively).</li>
+            <li><code>rm -rf folder</code>: Force deletion (r = recursive, f = force). Use with extreme caution!</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>📋 Copying & Moving Files</h2>
+        <ul>
+            <li><code>cp source destination</code>: Copies a file. <code>cp file.txt newfile.txt</code></li>
+            <li><code>cp -r source_folder destination_folder</code>: Copies a folder recursively.</li>
+            <li><code>mv source destination</code>: Moves (or renames) a file or folder. <code>mv oldname.txt newname.txt</code></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🔍 Finding Files</h2>
+        <p>
+            <code>find path options expression</code>: Powerful tool for finding files.
+        </p>
+        <ul>
+            <li><code>find . -name "file.txt"</code>: Finds "file.txt" in the current directory and its subdirectories.</li>
+            <li><code>find / -type d -name "folder"</code>: Finds directories named "folder" in the entire system.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🔎 Viewing File Content</h2>
+        <ul>
+            <li><code>cat file.txt</code>: Displays the entire file content.</li>
+            <li><code>less file.txt</code>: Displays file content page by page; use arrow keys to navigate.</li>
+            <li><code>head -n 10 file.txt</code>: Shows the first 10 lines.</li>
+            <li><code>tail -n 10 file.txt</code>: Shows the last 10 lines.</li>
+            <li><code>tail -f file.txt</code>: Follows the file; shows new lines as they are added (useful for logs).</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🔐 File Permissions</h2>
+        <p>
+            Linux has a robust permission system (rwx: read, write, execute) for user (u), group (g), and others (o).
+        </p>
+        <ul>
+            <li><code>chmod 755 file.txt</code>: Changes permissions (7=rwx, 5=r-x).</li>
+            <li><code>chown user:group file.txt</code>: Changes the owner and group of a file.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>👤 User Management</h2>
+        <ul>
+            <li><code>sudo adduser newuser</code>: Adds a new user (requires sudo).</li>
+            <li><code>passwd user</code>: Changes a user's password.</li>
+            <li><code>sudo deluser user</code>: Deletes a user.</li>
+            <li><code>sudo usermod -aG group user</code>: Adds a user to a group.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>📦 Installing Packages</h2>
+        <p>
+            Package managers simplify software installation.
+        </p>
+        <ul>
+            <li><code>sudo apt install package_name</code>: Installs a package on Debian/Ubuntu systems.</li>
+            <li><code>sudo dnf install package_name</code> or <code>sudo yum install package_name</code>: Installs a package on Fedora/CentOS/RHEL systems.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🧪 Running Scripts</h2>
+        <ul>
+            <li><code>bash script.sh</code>: Runs a shell script.</li>
+            <li><code>chmod +x script.sh; ./script.sh</code>: Makes the script executable and runs it.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🖥️ Monitoring System</h2>
+        <ul>
+            <li><code>top</code> or <code>htop</code>: Shows running processes and resource usage.</li>
+            <li><code>df -h</code>: Displays disk space usage in a human-readable format.</li>
+            <li><code>free -m</code>: Shows memory usage in megabytes.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>📡 Network Commands</h2>
+        <ul>
+            <li><code>ping google.com</code>: Tests network connectivity.</li>
+            <li><code>ip a</code> or <code>ifconfig</code> (deprecated): Shows network interface information.</li>
+            <li><code>netstat -tuln</code> or <code>ss -tuln</code>: Lists open ports and network connections.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>📜 Viewing Logs</h2>
+        <p>
+            Logs are crucial for troubleshooting.
+        </p>
+        <ul>
+            <li><code>tail -f /var/log/syslog</code>: Follows the system log file (Debian/Ubuntu).</li>
+            <li><code>journalctl -xe</code>:  (systemd systems) View system logs.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>📌 Process Management</h2>
+        <ul>
+            <li><code>ps aux</code>: Lists all running processes.</li>
+            <li><code>kill PID</code>: Terminates a process (find the PID using <code>ps</code> or <code>top</code>).</li>
+            <li><code>kill -9 PID</code>: Forcefully terminates a process (use as a last resort).</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>💡 Terminal Shortcuts</h2>
+        <ul>
+            <li><code>Ctrl + C</code>: Interrupts the current command.</li>
+            <li><code>Ctrl + D</code>: Closes the terminal or ends input.</li>
+            <li><code>Ctrl + L</code>: Clears the terminal screen.</li>
+            <li><code>Ctrl + Z</code>: Suspends the current process.</li>
+            <li><code>Ctrl + A</code>: Moves the cursor to the beginning of the line.</li>
+            <li><code>Ctrl + E</code>: Moves the cursor to the end of the line.</li>
+            <li><code>Tab</code>: Auto-completes commands and filenames.</li>
+            <li><code>Up/Down arrows</code>: Scrolls through command history.</li>
+        </ul>
+    </div>
+</body>
+
+</html>
